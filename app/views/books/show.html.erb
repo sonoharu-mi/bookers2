@@ -1,3 +1,17 @@
 <h1>Books#show</h1>
 
 <%= render 'list', book: @book %>
+
+<table>
+  <thead>
+    <tr>
+      <th>Book detail</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><%= @book.title %></td>
+      <td><%= @book.body %></td>
+    </tr>
+  </tbody>
+</table>
