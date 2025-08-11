@@ -4,6 +4,7 @@ class UsersController < ApplicationController
     @book = Book.new
     @users = User.all
     @books = Book.all
+    @user = User.find(current_user.id)
   end
 
   def show

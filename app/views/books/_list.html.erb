@@ -1,22 +1,19 @@
 <h2>User info</h2>
-<% book.each do |book| %>
-  <%= image_tag book.user.get_profile_image(100,100) %>
-  <table>
-    <tbody>
-      <tr>
-        <th>name</th>
-        <th><%= book.user.name %></th>
-      </tr>
-      <tr>
-        <th>introduction</th>
-        <th><%= book.user.introduction %> </th>
-      </tr>
-    </tbody>
-  </table>
-<% end %>
-
-
-
+<table>
+  <tbody>
+    <tr>
+      <th><%= image_tag user.get_profile_image(100,100) %></th>
+    </tr>
+    <tr>
+      <th>name</th>
+      <th><%= user.name %></th>
+    </tr>
+    <tr>
+      <th>introduction</th>
+      <th><%= user.introduction %> </th>
+    </tr>
+  </tbody>
+</table>
 
 <h1>New book</h1>
 <%= form_with model: book do |f| %>
