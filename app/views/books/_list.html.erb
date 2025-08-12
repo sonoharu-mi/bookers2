@@ -15,6 +15,12 @@
   </tbody>
 </table>
 
+<% if user == current_user %>
+  <%= link_to edit_user_path(user) do %>
+    <i class="fa-solid fa-user-gear"></i>
+  <% end %>
+<% end %>
+
 <h1>New book</h1>
 <%= form_with model: book do |f| %>
   <p>Title</p>
