@@ -19,16 +19,19 @@ class UsersController < ApplicationController
 
   def update
     @user = User.find(params[:id])
-    if @user.update(user_params)
-      redirect_to user_path(@user.id)
-    else
-      @users = User.all
-      render :index
-    end
+    @user.update(user_params)
+    redirect_to user_path(@user.id)
   end
 
   private
   def user_params
     params.require(:user).permit(:name, :profile_image, :introduction)
+  end
+
+  def is_matcing_login_user
+    user = User.find(params[:id])
+    unless user.id == current_user.id
+      redirect_to user_path(current_user.id)
+    end
   end
 end
