@@ -1,15 +1,22 @@
-<% if @user == current_user %>
-  <h1>User info</h1>
-
-  <%= form_with model: @user do |f| %>
-    <label for="inputName">Name</label><br>
-    <%= f.text_field :name, autofocus: true, id: "inputName" %><br>
-    <label for="inputImage">Image</label><br>
-    <%= f.file_field :profile_image, placeholder: "profile_image", accept: "image/*" %><br>
-    <label for="inputIntroduction">Introduction</label><br>
-    <%= f.text_area :introduction %><br>
-    <%= f.submit "Update User" %>
-  <% end %>
-<% else %>
-  <h1>404 Not Found</h1>
-<% end %>
+<div class="row">
+  <div class="col-sm-12 col-md-8 col-lg-5 px-5 px-sm-0 mx-auto">
+    <h1>User info</h1>
+    <%= form_with model: @user do |f| %>
+      <div class="form-group">
+        <label for="inputName">Name</label><br>
+        <%= f.text_field :name, autofocus: true, id: "inputName", class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <label for="inputImage">Image</label><br>
+        <%= f.file_field :profile_image, placeholder: "profile_image", accept: "image/*", class: "form-control-file" %><br>
+      </div>
+      <div class="form-group">
+        <label for="inputIntroduction">Introduction</label><br>
+        <%= f.text_area :introduction, class: "form-control" %><br>
+      </div>
+      <div class="form-group">
+        <%= f.submit "Update User", class: "btn btn-secondary" %>
+      </div>
+    <% end %>
+  </div>
+</div>
