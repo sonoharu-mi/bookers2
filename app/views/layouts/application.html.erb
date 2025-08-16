@@ -70,6 +70,9 @@
     </header>
     <main>
       <div class="container px-5 px-sm-0">
+        <% flash.each do |message_type, message| %>
+          <div class="flash_message <%= message_type %>"><%= message %></div>
+        <% end %>
         <%= yield %>
       </div>
     </main>
