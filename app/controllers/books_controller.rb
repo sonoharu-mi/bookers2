@@ -15,8 +15,8 @@ class BooksController < ApplicationController
   end
 
   def index
-    @book = Book.new
     @books = Book.all
+    @book = Book.new
     @users = User.all
     @user = User.find(current_user.id)
   end
